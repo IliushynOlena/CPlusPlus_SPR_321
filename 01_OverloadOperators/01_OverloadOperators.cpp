@@ -1,6 +1,15 @@
 ﻿#include <iostream>
+#include <Windows.h>
 using namespace std;
 
+void gotoxy(int x, int y)
+{
+    static HANDLE h = NULL;
+    if (!h)
+        h = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD c = { x, y };
+    SetConsoleCursorPosition(h, c);
+}
 struct Date
 {
    
@@ -41,7 +50,8 @@ public:
     }
     void Print()
     {
-        cout << " X : " << x << " Y :" <<y << endl;
+        gotoxy(x, y); cout << "*";
+        //cout << " X : " << x << " Y :" <<y << endl;
     }
     ~Point()
     {
@@ -211,7 +221,7 @@ int Plus(int a, int b)
 int main()
 {
 
-
+    //gotoxy(10, 10); cout << "Hello" << endl;
     //int a = 5;
     //a++;
     //++a;
@@ -236,6 +246,7 @@ int main()
     istream cin;*/
     /*cout << 5;
     cout << "Hello";*/
+    /*
     cout << "-----------------------" << endl;
     cout << point2 << point<<point3;
     cout << "-----------------------" << endl;
@@ -255,6 +266,7 @@ int main()
     point2.Print();
     --point2;
     point2.Print();
+    */
     /*
     Point res = point2.Plus(point3);
     cout << "Res : "; res.Print();

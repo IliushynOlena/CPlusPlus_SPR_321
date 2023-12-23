@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Array
@@ -21,6 +22,17 @@ public:
             arr[i] = i+1;
         }      
         
+    }
+    operator string()
+    {
+        //"2 3 5 8 9 6 7 4 5 9 6"
+        string res = "";
+        for (int i = 0; i < size; i++)
+        {
+            res += to_string( arr[i]) + " ";// 5 + " " + 
+           
+        }
+        return res;
     }
     void operator++(int a)
     {
@@ -106,6 +118,7 @@ int main()
     arr2.Print();
     arr2++;
     arr2.Print();
+    cout << "String : "<<  (string)arr2 << endl;
 
     cout << "Element in index [4] = " << arr2.GetElementById(4) << endl;
     cout << "Element in index [2] = " << arr2.GetElementById(2) << endl;
