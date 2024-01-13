@@ -24,7 +24,6 @@ public:
 		countBooks = other.countBooks;
 		books = other.books;
 		other.books = nullptr;
-
 	}
 	void Show()const;
 	void AddNewBook(Book book);

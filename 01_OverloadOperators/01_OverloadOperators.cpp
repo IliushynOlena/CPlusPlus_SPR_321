@@ -220,6 +220,16 @@ int Plus(int a, int b)
 }
 int main()
 {
+    cout << "Hello" << endl;
+    int a = 5;
+    if (-5)
+    {
+        cout << "True " << endl;
+    }
+    else
+    {
+        cout << "False " << endl;
+    }
 
     //gotoxy(10, 10); cout << "Hello" << endl;
     //int a = 5;
