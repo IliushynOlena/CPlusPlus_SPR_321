@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Windows.h>
 using namespace std;
 
 class Array
@@ -75,16 +76,35 @@ public:
             if (B > E)return -1;
         }
     }
-};
+}; 
+void PrintNumber()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Number in function : " << i << endl;
+    }
+}
 
 int main()
 {
+
+    PrintNumber();
+    for (int i = 0; i < 10; i++)
+    {
+        cout << "Number in main : "<<  i << endl;
+        Sleep(500);
+    }
+    
+        
+
+
+
+
     Array arr(7);//constructor parametrized
     arr.Print();
 
    /* Array arr3 = 10;
     arr3.Print();*/
-
     Array arr2({ 6, 7, 8, 9,10,15,14,78,96});
     arr2.Print();
     arr2.Fill({ 9 });
