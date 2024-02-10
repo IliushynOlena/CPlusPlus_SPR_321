@@ -16,11 +16,13 @@ class List
 private:
     Node* head;
     Node* tail;
+    int size;
 public:
     List()
     {
         head  = nullptr;
         tail = nullptr;
+        size = 0;
     }
     List(const List &other)
     {
@@ -47,6 +49,7 @@ public:
             head = head->next;
             delete current;
         }
+        size = 0;
     }
     bool IsEmpty()
     {
@@ -62,6 +65,7 @@ public:
         head->prev = newNode;
         head = newNode;
         //head->next->prev = newNode;
+        size++;
     }
     void Print()
     {
@@ -89,7 +93,7 @@ public:
             tail->next = newNode;
             tail = newNode;
         }
-
+        size++;
     }
     T_data GetElement(int pos)
     {
@@ -130,8 +134,32 @@ public:
             delete tail->next;
             tail->next = nullptr;
         }
+        size--;
 
-
+    }
+    void DeleteByPosition(int pos)
+    {
+      
+        if (pos < 1 || pos > size)return;
+        else if (pos == 1)
+        {
+            //DeleteFromHead();return;
+        }
+        else if (pos == size)
+        {
+            DeleteFromTail(); return;
+        }
+        else
+        {
+            Node* current = head;
+            for (int i = 1; i < pos; i++)
+            {
+                current = current->next;
+            }
+            current->prev->next = current->next;
+            current->next->prev = current->prev;
+            delete current;
+        }       
     }
 };
 
@@ -182,6 +210,10 @@ public:
     {
         points.Print();
     }
+    void DeleteByPosition(int pos)
+    {
+        points.DeleteByPosition(pos);
+    }
   
 };
 int main()
@@ -190,12 +222,15 @@ int main()
     v.AddNewPointToHead(Point(5, 9));
     v.AddNewPointToHead(Point(15, 4));
     v.AddNewPointToHead(Point(3, 7));
+    v.AddNewPointToHead(Point(33, 47));
+    v.AddNewPointToHead(Point(5, 19));
     v.Print();
 
-    Vector copy(v);//copy constructor
-    copy.Print();
+    //Vector copy(v);//copy constructor
+    v.DeleteByPosition(5);
+    v.Print();
 
-    copy = v;
+    //copy = v;
   
     //List<int> l;
     //for (int i = 0; i < 10; i++)
