@@ -20,13 +20,14 @@ public:
 		cout << "Place : " << place << endl;
 		cout << "Weight : " << weight << endl;
 	}	
+	//virtual method
 	virtual void Move()const
 	{
 		cout << "I am moving.........." << endl;
 	}
 	//virtual - allow change realization in child class
 	//pure virtual method
-	virtual void MakeSound()const = 0;
+	virtual void MakeSound()const = 0; //{} = X
 	
 };
 class Lion: public Animal//na abstract class
