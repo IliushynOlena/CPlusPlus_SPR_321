@@ -58,7 +58,11 @@ public:
 			size--;
 			return first;
 		}
-		return Element();
+		else
+		{
+
+		}
+		//return Element();
 	}
 	void Print()
 	{

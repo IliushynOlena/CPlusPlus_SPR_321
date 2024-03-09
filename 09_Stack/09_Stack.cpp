@@ -60,7 +60,7 @@ class Stack
 public:
 	Stack() = delete;
 
-	Stack(int size) :size(size)//20
+	Stack(int size) :size(size)//-20
 	{
 		arr = new int[size];//20
 		top = EMPTY;
@@ -77,7 +77,10 @@ public:
 			arr[++top] = element;
 			return true;
 		}
-		return false;
+		else {
+			//throw
+		    return false;
+		}
 	}
 	bool IsEmpty()const
 	{
@@ -87,11 +90,17 @@ public:
 	{
 		if (!IsEmpty())
 			return arr[top--];
+		else {
+			//throw
+		}
 	}
 	int Peek()const
 	{
 		if (!IsEmpty())
 			return arr[top];
+		else {
+			//throw
+		}
 	}
 	int GetCount()
 	{
