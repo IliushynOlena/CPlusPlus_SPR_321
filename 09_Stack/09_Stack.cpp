@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 //class Stack
@@ -59,7 +60,6 @@ class Stack
 	int top;
 public:
 	Stack() = delete;
-
 	Stack(int size) :size(size)//-20
 	{
 		arr = new int[size];//20
@@ -109,6 +109,14 @@ public:
 	void Clear()
 	{
 		top = EMPTY;
+	}
+	void SaveToFile()const
+	{
+		ofstream out("stack.txt");
+		for (int i = 0; i <= top; i++)
+		{
+			out << arr[i] << " ";
+		}
 	}
 	void Print()const
 	{
