@@ -7,7 +7,7 @@ private:
 	string name;
 public:
 	Person() :name("no name"){}
-	Person(string name) :name(name) {}
+ Person(string name) :name(name) {}
 	virtual void Print()const
 	{
 		cout << "Name : " << name << endl;
@@ -21,7 +21,7 @@ class Aspirant : public Person
 	string* subjects;
 	int countSubjects;
 public:
-	Aspirant(string name, initializer_list<string> subjs) ://4
+	 Aspirant(string name, initializer_list<string> subjs) ://4
 		Person(name)
 	{
 		this->countSubjects = subjs.size();

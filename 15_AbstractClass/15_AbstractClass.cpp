@@ -64,7 +64,8 @@ class Reptile: public Animal//abstract class
 {
 	float swimDeep;
 public:
-	Reptile(string n, string k, float s, string p, float w, float sw) :swimDeep(sw), Animal(n, k, s, p, w) {}
+	Reptile(string n, string k, float s, string p, float w, float sw) :swimDeep(sw), 
+		Animal(n, k, s, p, w) {}
 	//virtual void MakeSound()const = 0;
 
 	void Move()const
